@@ -1,0 +1,90 @@
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+body {
+    /* background-image: url("img/bird01.svg");*/
+    background-image:linear-gradient(0deg,red,blue,green,red);
+    background-size: cover;
+    background-attachment: fixed;
+
+
+   }
+h1{
+    color: purple;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2em;
+}
+h2{
+    font-size: 1.3em;
+}
+figcaption
+{
+    font-family: Roboto;
+    font-size: 0.75em;
+}
+article{
+    font-family: Roboto;
+    font-size: 0.75em;
+}
+
+li em{
+    line-height: 2em;
+    border:solid;
+    background-color: black;
+    padding:2px;
+    border-width: 1px;
+    border-radius: 5px;
+    
+}
+
+.textbox{
+    height: 8em;
+    text-indent: 2em;
+    text-shadow: -.1em 0 rgb(2, 2, 2);
+    border:solid;
+    padding:2px;
+    border-width: 1px;
+    border-radius: 5px;
+    overflow: auto;
+
+}
+
+article ul{
+    text-shadow: 0 0 rgba(196, 196, 196,0);
+    color: rgba(255, 0, 255, .5);
+    list-style-type:disc;
+}
+
+li:hover{
+    background-color: black;
+    color: aquamarine;
+}
+
+img[src = "img/bird01.svg"]{
+    image-orientation: flip;
+    width: 8em;
+}
+
+.floater{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: wheat;
+    border: 1px solid;
+    /*height: 15em;*/
+    padding: 1em;
+    overflow: scroll;
+    position:absolute;
+    top: 2em;
+    left: 50%;
+    z-index: 0;
+}
+
+.floater img{
+    border: 3px dashed;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-color: white;
+    width: 4em;
+    float:right
+}
