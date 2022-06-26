@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../frame.css">
+		<link rel="stylesheet" href="../stylepb.css">
+		<link rel="stylesheet" href="../../fonts.css">
+		<title>Example website</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id ="main">
+			<div id="superheader"></div>
+			<header>
+				<a href="../index.html"><img class="bannerimg" src="../../img/back.png"></a>
+				<div></div>
+				<a href="../index.html"><img class="bannerimg" src="../../img/EN.png"></a>
+				<a href="../index.html"><img class="bannerimg" src="../../img/FR.png"></a>
+			</header>
+			<main>
+				<div>
+				<h1>
+					The Optimal Path
+				</h1>
+				<h3 style="text-align: center;">
+					<i>Time required: 4H</i>
+				</h3>
+				<h2>
+					Requirements:
+				</h2>
+				
+					This problem requires use of:
+					<ul style="list-style-type: none">
+						<li>- Functions</li>
+						<li>- Lists</li>
+						<li>- Turtle</li>
+						<li>- Trigonometry</li>
+					</ul>					
+				
+					<h2>
+						Problem:
+					</h2>
+					<p>
+						Finding the shortest/quickest path is not always obvious. This series of problems will focus on using different approaches to find optimal paths, and on providing a visual confirmation of our solutions:
+						<ul style ="list-style-type: none;">
+							<li>
+								Part I will focus on the visual side of things, writing functions to draw paths for a turtle in a coordinate system.
+							</li>
+							<li> 
+								Part II will focus on finding the optimal path through dichotomy.
+							</li>
+							<li> 
+								Part III will focus on finding the optimal path through brute force.
+							</li>
+						</ul>
+					</p>
+					<br>
+					<hr>
+					<br>
+					<h2>
+						Questions:
+					</h2>
+						<h3>
+							I) Turtle in a grid
+						</h3>
+						<ol type="a">
+							<li>Write <code>absmove()</code>, a function that moves a turtle to a given absolute position (x,y). Use conversion/scaling units as needed.</li>
+							<li>Improve on it by adding a third parameter <code>write</code> that, if true, draws the path of the turtle, if false does not.</li>
+							<li>Improve on the function by returning the distance covered in pixels by the turtle.</li>
+							<li>Write a <code>move()</code> function that moves the turtle relative to it's current position. If the turtle is at position (a,b), it should arrive at (a+x,b+y);</li>
+							<li>Improve the function by adding a write parameter and returning the distance covered as before.</li>
+							<li>Improve <code>absmove()</code> and <code>move()</code> by making them move the turtle in a straight line to the aimed position, if it's not yet the case. </li>
+						</ol>
+						<br>
+						<h3>
+							II) The lifeguard dichotomy
+						</h3>
+						<img src="img01.svg" style="width : 20em;">
+						<p>
+							A lifeguard must save a drowning person from death. To do so, the lifeguard must <b>go as quickly as possible</b> from where he stands to where the drowner is. However the quickest path is not a straight line, because <code>beachspeed</code>, his speed on sand, is different from his <code>seaspeed</code>, his speed in water. You must help that lifeguard figure out what the quickest path would be.
+						</P>	
+						<p>
+							<code>shorewidth</code>, <code>bdepth</code>,<code>sdepth</code> and <code>flexpoint</code> should be expressed in meters. <code>beachspeed</code> and <code>seaspeed</code> should be expressed in meters per second. <code>flexpoint</code> is the determining factor to find the the quickest path.
+						</p>
+						<ol type="a">
+							<li>Set variables for the constants that are relevant to this part of the problem, and make the turtle draw the beach.</li>
+							<li>Write a function lifeguardpath() that takes a parameter flexpoint and draws the path the lifeguard would take.</li>
+							<li>Improve that function by making it return the distance the lifeguard covers</li>
+							<li>Improve that function by making it return instead, the time the lifeguard would take along that path.</li>
+						</ol>
+						<br>
+						<p>
+							We now have a way to draw and measure how long it takes to go along a given path. We will now dichotomize to find an optimal solution. Here is an example of the use of the dichotomy method:
+						</p>
+						<div style="text-align:left;font-style: italic; margin-left: 5em; margin-right:5em;line-height: 1em;;">
+							<br>Bob and Jane are playing a number guessing game. Jan can choose any integer between 0 and 100. Jane can only tell Bob if his guess is correct, too high or too low. She is thinking of 15.
+							<p>Bob is well versed in the dichotomy method and says: "50" </p>
+							<p>Jane replies: "Too high!"</p>
+							<p>Bob then says: "25"</p>
+							<p>Jane replies: "Too high!"</p>
+							<p>Bob then says: "12" (he would have liked to say 12.5, but the rules state that we are only guessing integers)</p>
+							<p>Jane says: "Too low!"</p>
+							<p>Bob thinks for a second, remembers that (25 - 12)/2 + 12 is equal to 18.5 and says: "18"</p>
+							<p>Jane says: "Too high!"</p>
+							<p>Bob thinks again about how (18- 12)/2 + 12 = 15 and says 15!</p>
+							<p>Jane says: "Correct!"</p>
+						</div>
+						Use the dichotomy method to find the solution to the lifeguard's problem.
+						<br>
+						<br>
+						<h3>
+							III) The systematic fisherman
+						</h3>
+						<img src="img02.png" style="width : 20em;">
+						<br>
+						<p>You are a fisherman on an isle in the Caribbean. Every day, head office faxes you a list of coordinates. As an example, it could be:</p>
+						
+						<div style="text-align:left;font-style: italic; margin-left: 5em; margin-right:5em;line-height: 1em; text-align: center;">
+							<br>
+								[[0,3],[-1,5],[2,2],[-3,4],[-7,2],[7,-12]]
+							<br>
+						</div>
+						<p>Before looking at the questions, copy then study this code block. It's what you will use to simulate the faxes head office is sending you. You are only allowed to interact with the "fax" variable. </p>
+						<br>
+						<pre style="height: auto;">
+
+#head office fax simulator
+import random
+maxy = 15
+maxx = 15
+minnets = 5
+maxnets = 10
+array = []
+fax = ""
+for i in range(random.randint(minnets,maxnets)):
+    randx = random.randint(-maxx,maxx)
+    randy = random.randint(-maxy,maxy)
+    whilecounter = 0
+    while([randx,randy] in array):
+        whilecounter += 1
+        randx = random.randint(-maxx,maxx)
+        randy = random.randint(-maxy,maxy)
+        if(whilecounter > 10):
+            array.append("faxing issue...")
+            break
+    array.append([randx,randy])
+#only interact with the variable fax
+fax = str(array)
+						</pre>
+						<br>
+						
+						<ol type="a">
+							<li>Write a method that transforms the <code>fax</code> string into a list of coordinates(a list of lists of integers).</li>
+							<li>Create a route variable that represents the list of successive points you take to cover all fishing nets.</li>
+							<li>Create a function that takes that route as a parameter and draws out, with turtle, the path you would take.</li>
+							<li>Find the best possible route and draw it out.</li>
+						</ol>
+						<br>
+				</div>
+
+				<i><a href="solution.html">Click on this link to view the solution</a></i>
+
+
+
+			</main>
+			<footer>
+				footer
+			</footer>
+			<div id="superfooter"></div>
+		</div>
+	</body>
+</html>

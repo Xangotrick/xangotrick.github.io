@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../frame.css">
+		<link rel="stylesheet" href="../stylepb.css">
+		<link rel="stylesheet" href="../../fonts.css">
+		<title>Example website</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id ="main">
+			<div id="superheader"></div>
+			<header>
+				<a href="../index.html"><img class="bannerimg" src="../../img/back.png"></a>
+				<div></div>
+				<a href="../index.html"><img class="bannerimg" src="../../img/EN.png"></a>
+				<a href="../index.html"><img class="bannerimg" src="../../img/FR.png"></a>
+			</header>
+			<main>
+				<div>
+				<h1>
+					Circles
+				</h1>
+				
+				
+					<h2>
+						Questions:
+					</h2>
+						<ol type="a">
+							<li>Write a function that will make the turtle draw a square</li>
+							<li>Improve the previous function, by giving it a parameter <code>sidelength</code>. The sides of the drawn square must now be <code>sidelength</code> pixels long.</li>
+							<pre>
+import turtle
+bob = turtle.Turtle()
+
+def drawsquare(sidelength):
+    for i in range(4):
+        bob.fd(sidelength)
+        bob.rt(90)
+
+turtle.mainloop()#keeps the window open
+							</pre>
+							<li>Write a function that will make the turtle draw an equilateral triangle.</li>
+							<li>Improve on it by similarly adding a sidelength parameter.</li>
+							<pre>
+def triangle(sidelenght):
+    for i in range(3):
+        bob.fd(sidelenght)
+        bob.rt(360 / 3)
+							</pre>
+							<li>Write a function with a <code>sidelength</code> parameter that will make the turtle draw a regular pentagon.</li>
+							<pre>
+def pentagon(sidelenght):
+    for i in range(5):
+        bob.fd(sidelenght)
+        bob.rt(360 / 5)
+							</pre>
+							<li>Write a function with a <code>sidelength</code> parameter that will make the turtle draw a regular hexagon.</li>
+							<pre>
+def hexagon(sidelenght):
+    for i in range(6):
+        bob.fd(sidelenght)
+        bob.rt(360 / 6)
+							</pre>
+						</ol>
+						
+						<br>
+						Using turtle, write a method that takes two parameters, <code>nside</code> and <code>sidelength</code>. The method will make the turtle draw a regular polygon with <code>nside</code> sides.
+						Each side will be <code>sidelength</code> pixels long.
+						<pre>
+def polygon(sidelenght, nside):
+    for i in range(nside):
+        bob.fd(sidelenght)
+        bob.rt(360 / nside)
+						</pre>
+				</div>
+				<i><a href="problem.html">Click on this link to go back to the problem</a></i>
+			</main>
+			<footer>
+				footer
+			</footer>
+			<div id="superfooter"></div>
+		</div>
+	</body>
+</html>
