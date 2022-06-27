@@ -23,7 +23,7 @@
 			<main>
 				<div>
 				<h1>
-					Circles
+					Magic Square
 				</h1>
 				<h3 style="text-align: center;">
 					<i>Time required: 1H</i>
@@ -36,15 +36,15 @@
 					<ul style="list-style-type: none">
 						<li>- Functions</li>
 						<li>- Loops</li>
-						<li>- Basic turtle methods</li>
-						<li>- Basic Geometry</li>
+						<li>- Nested Lists</li>
 					</ul>					
 				
 					<h2>
 						Problem:
 					</h2>
 					<p>
-						Using turtle, and drawing only straight lines, we would like to write a function that draws a circle of a given radius.
+						A magic square is a 3x3 grid filled with the numbers 1 through 9. The rules are that all 9 numbers must be used, and the sum of the numbers of any row, column or diagonal must be the same.
+						Through brute force, we will find all possible 3x3 magic squares.
 					</p>
 					<br>
 					<hr>
@@ -54,17 +54,11 @@
 						Questions:
 					</h2>
 						<ol type="a">
-							<li>Write a function that will make the turtle draw a square</li>
-							<li>Improve the previous function, by giving it a parameter <code>sidelength</code>. The sides of the drawn square must now be <code>sidelength</code> pixels long.</li>
-							<li>Write a function that will make the turtle draw an equilateral triangle.</li>
-							<li>Improve on it by similarly adding a sidelength parameter.</li>
-							<li>Write a function with a <code>sidelength</code> parameter that will make the turtle draw a regular pentagon.</li>
-							<li>Write a function with a <code>sidelength</code> parameter that will make the turtle draw a regular hexagon.</li>
-						</ol>
-						
-						<br>
-						Using turtle, write a method that takes two parameters, <code>nside</code> and <code>sidelength</code>. The method will make the turtle draw a regular polygon with <code>nside</code> sides.
-						Each side will be <code>sidelength</code> pixels long.		
+							<li>Write a variable <code>magic</code> that represents an empty magic square.</li>
+							<li>Fill <code>magic</code> any way you like. Then write a function <code>ismagic()</code> that returns True if <code>magic</code> is a magic square, or False if not.</li>
+							<li>Find a way of systematically going through every possible way of filling <code>magic</code>.<i> (Hint: use <code>itertools.permutations()</code>)</i></li>
+							<li>How many different 3x3 magic squares exist?</li>
+						</ol>	
 				</div>
 				<i><a href="solution.html">Click on this link to view the solution</a></i>
 			</main>
