@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../frame.css">
+		<link rel="stylesheet" href="../stylepb.css">
+		<link rel="stylesheet" href="../../fonts.css">
+		<title>Example website</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id ="main">
+			<div id="superheader"></div>
+			<header>
+				<a href="../index.html"><img class="bannerimg" src="../../img/back.png"></a>
+				<div></div>
+				<a href="../index.html"><img class="bannerimg" src="../../img/EN.png"></a>
+				<a href="../index.html"><img class="bannerimg" src="../../img/FR.png"></a>
+			</header>
+			<main>
+				<div>
+				<h1>
+					Circles
+				</h1>
+				<h2>
+					Questions:
+				</h2>
+				<ol type="a">
+					<li>Write as variables the parameters of the problem: <code>minint</code>, <code>maxint</code>, <code>inttoguess</code>.</li>
+					<li>Write a Jane method that take a parameter <code>inputint</code>, and returns information on whether <code>inputint</code> is higher, lower or equal to <code>inttoguess</code>.</li>
+					<pre>
+def Jane(inputint):
+    if inputint == inttoguess:
+        return 0
+    else:
+        if inputint > inttoguess:
+            return 1
+        else:
+            return -1
+					</pre>
+					<li>Write a method that emulates Bob's way of finding the right integer.</li>
+					<pre>
+def BobGuess():
+    max = maxint+1
+    min = minint
+    guess = int((max - min) / 2 + min)
+    found = False
+    while not found:
+        janeint = Jane(guess)
+        if janeint == 0:
+            found = True
+        else:
+            if janeint == 1:
+                max = guess
+                print(str(guess) + " is too high!")
+            else:
+                min = guess
+                print(str(guess) + " is too low!")
+            guess = int((max - min) / 2 + min)
+    print(str(guess) + " is good!")
+					</pre>
+					<li>Find the average amount of guesses needed to get the right answer through Bob's method.</li>
+					<pre>
+def BobGuess():
+    max = maxint+1
+    min = minint
+    guess = int((max - min) / 2 + min)
+    found = False
+    numofguesses = 0
+    while not found:
+        numofguesses += 1
+        janeint = Jane(guess)
+        if janeint == 0:
+            found = True
+        else:
+            if janeint == 1:
+                max = guess
+            else:
+                min = guess
+            guess = int((max - min) / 2 + min)
+    return numofguesses
+
+totalguessnumber = 0
+for i in range(1,101):
+    inttoguess = i
+    totalguessnumber += BobGuess()
+
+print(totalguessnumber)
+print(totalguessnumber / 100) # 5.8 on average
+					</pre>
+					<li>Write a method that emulates randomly picking an integer until getting the right answer.</li>
+					<pre>
+def BobGuessRandom():
+    max = maxint
+    min = minint
+    guess = random.randint(min,max)
+    found = False
+    numofguesses = 0
+    while not found:
+        numofguesses += 1
+        janeint = Jane(guess)
+        if janeint == 0:
+            found = True
+        else:
+            if janeint == 1:
+                max = guess
+            else:
+                min = guess
+        guess = random.randint(min,max)
+    return numofguesses
+					</pre>
+					<li>Find the average amount of guesses needed to get the right answer through random guesses.</li>
+					<pre>
+def BobGuessRandom():
+    max = maxint
+    min = minint
+    guess = random.randint(min,max)
+    found = False
+    numofguesses = 0
+    while not found:
+        numofguesses += 1
+        janeint = Jane(guess)
+        if janeint == 0:
+            found = True
+        else:
+            if janeint == 1:
+                max = guess
+            else:
+                min = guess
+        guess = random.randint(min,max)
+    return numofguesses
+
+totalguessnumber = 0
+totaleventnum = 0
+for k in range(1000):
+    for i in range(1,101):
+        totaleventnum += 1
+        inttoguess = i
+        totalguessnumber += BobGuessRandom()
+
+print(totalguessnumber)
+print(totalguessnumber / totaleventnum) # 9.43 on average
+					</pre>
+				</ol>	
+				</div>
+				<i><a href="problem.html">Click on this link to go back to the problem</a></i>
+			</main>
+			<footer>
+				footer
+			</footer>
+			<div id="superfooter"></div>
+		</div>
+	</body>
+</html>

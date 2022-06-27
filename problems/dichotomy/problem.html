@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../frame.css">
+		<link rel="stylesheet" href="../stylepb.css">
+		<link rel="stylesheet" href="../../fonts.css">
+		<title>Example website</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id ="main">
+			<div id="superheader"></div>
+			<header>
+				<a href="../index.html"><img class="bannerimg" src="../../img/back.png"></a>
+				<div></div>
+				<a href="../index.html"><img class="bannerimg" src="../../img/EN.png"></a>
+				<a href="../index.html"><img class="bannerimg" src="../../img/FR.png"></a>
+			</header>
+			<main>
+				<div>
+				<h1>
+					Dichotomy
+				</h1>
+				<h3 style="text-align: center;">
+					<i>Time required: 1H</i>
+				</h3>
+				<h2>
+					Requirements:
+				</h2>
+				
+					This problem requires use of:
+					<ul style="list-style-type: none">
+						<li>- Functions</li>
+						<li>- Loops</li>
+					</ul>					
+				
+					<h2>
+						Problem:
+					</h2>
+					
+					<div style="text-align:left;font-style: italic; margin-left: 5em; margin-right:5em;line-height: 1em;;">
+					Bob and Jane are playing a number guessing game. Jan can choose any integer between 0 and 100. Jane can only tell Bob if his guess is correct, too high or too low. She is thinking of 15.
+							<p>Bob is well versed in the dichotomy method and says: "50" </p>
+							<p>Jane replies: "Too high!"</p>
+							<p>Bob then says: "25"</p>
+							<p>Jane replies: "Too high!"</p>
+							<p>Bob then says: "12" (he would have liked to say 12.5, but the rules state that we are only guessing integers)</p>
+							<p>Jane says: "Too low!"</p>
+							<p>Bob thinks for a second, remembers that (25 - 12)/2 + 12 is equal to 18.5 and says: "18"</p>
+							<p>Jane says: "Too high!"</p>
+							<p>Bob thinks again about how (18- 12)/2 + 12 = 15 and says 15!</p>
+							<p>Jane says: "Correct!"</p>
+					</div>
+					We will be answering the following question, today: is it better to go through Bob's method, or to randomly guess.
+					<br>
+					<br>
+					<hr>
+					<br>
+				
+					<h2>
+						Questions:
+					</h2>
+						<ol type="a">
+							<li>Write as variables the parameters of the problem: <code>minint</code>, <code>maxint</code>, <code>inttoguess</code>.</li>
+							<li>Write a Jane method that take a parameter <code>inputint</code>, and returns information on whether <code>inputint</code> is higher, lower or equal to <code>inttoguess</code>.</li>
+							<li>Write a <code>while</code> loop that emulates Bob's method to find the right integer.</li>
+							<li>Find the average amount of guesses needed to get the right answer through Bob's method.</li>
+							<li>Write a <code>while</code> loop that emulates randomly picking an integer until getting the right answer.</li>
+							<li>Find the average amount of guesses needed to get the right answer through random guesses.</li>
+						</ol>	
+				</div>
+				<i><a href="solution.html">Click on this link to view the solution</a></i>
+			</main>
+			<footer>
+				footer
+			</footer>
+			<div id="superfooter"></div>
+		</div>
+	</body>
+</html>
