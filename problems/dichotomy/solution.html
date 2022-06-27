@@ -30,7 +30,7 @@
 				</h2>
 				<ol type="a">
 					<li>Write as variables the parameters of the problem: <code>minint</code>, <code>maxint</code>, <code>inttoguess</code>.</li>
-					<li>Write a Jane method that take a parameter <code>inputint</code>, and returns information on whether <code>inputint</code> is higher, lower or equal to <code>inttoguess</code>.</li>
+					<li>Write a Jane function that take a parameter <code>inputint</code>, and returns information on whether <code>inputint</code> is higher, lower or equal to <code>inttoguess</code>.</li>
 					<pre>
 def Jane(inputint):
     if inputint == inttoguess:
@@ -41,7 +41,7 @@ def Jane(inputint):
         else:
             return -1
 					</pre>
-					<li>Write a method that emulates Bob's way of finding the right integer.</li>
+					<li>Write a function that emulates Bob's way of finding the right integer.</li>
 					<pre>
 def BobGuess():
     max = maxint+1
@@ -91,7 +91,7 @@ for i in range(1,101):
 print(totalguessnumber)
 print(totalguessnumber / 100) # 5.8 on average
 					</pre>
-					<li>Write a method that emulates randomly picking an integer until getting the right answer.</li>
+					<li>Write a function that emulates randomly picking an integer until getting the right answer.</li>
 					<pre>
 def BobGuessRandom():
     max = maxint
