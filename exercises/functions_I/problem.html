@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../frame.css">
+		<link rel="stylesheet" href="../stylepb.css">
+		<link rel="stylesheet" href="../../fonts.css">
+		<title>Example website</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id ="main">
+			<div id="superheader"></div>
+			<header>
+				<a href="../index.html"><img class="bannerimg" src="../../img/back.png"></a>
+				<div></div>
+				<a href="../index.html"><img class="bannerimg" src="../../img/EN.png"></a>
+				<a href="../index.html"><img class="bannerimg" src="../../img/FR.png"></a>
+			</header>
+			<main>
+				<div>
+				<h1>
+					Functions I
+				</h1>
+				<h3 style="text-align: center;">
+				</h3>
+					<p>
+					</p>
+					<h2>
+						Questions:
+					</h2>
+						<h3>Part A</h3>
+						<ol type="1">
+							<li>Write a <code>worldprinter()</code> function that prints the string <code>"Hello World!"</code> when called.</li>
+							<li>Write a <code>printer(astring)</code> function that takes one parameter <code>astring</code> and prints <code>astring</code> when called.</li>
+							<li>Write a <code>doubleprint(astring)</code> function that takes one parameter <code>astring</code> and prints <code>astring</code> two times in a row.</li>
+							<li>Write a <code>nprint(astring,n)</code> function that takes two parameters <code>astring</code> and <code>n</code> and prints <code>astring</code> <code>n</code> times. </li>
+						</ol>
+						<h3>Part B</h3>
+						<ol type="1">
+							<li>Write <code>sum(a,b)</code>, a function that returns the sum of a and b.</li>
+							<li>Write <code>multiply(a,b)</code>, a function that returns the a multiplied by b.</li>
+							<li>What happens if you write <code>print(multiply(sum(2,3),sum(1,2)))</code>. Try to understand what is happening by breaking it down step by step.</li>
+							<li>Write <code>combinator(a,b,c)</code>, a function that returns a * c + b * c, by using <code>sum()</code> and <code>multiply()</code>.</li>
+							<li>Write <code>negator(a)</code>, a function that returns -1 * a.</li>
+							<li>What happens when you write <code>print(negator(negator(3)))</code>. Again try to understand what is happening here.</li>
+							<li>Consider the following code block:
+								<pre>
+def multinegator(a,q):
+    for i in range(q):
+        a = negator(a)
+    return a					</pre>
+								Try using this function for a few test cases, then anser the following question.</li>
+							<li>Without checking with python, try to figure out what <code>multinegator(-1,5)</code> will return. What will <code>multinegator(1,6842688)</code> return?</li>
+							
+
+						</ol>
+				
+				</div>
+			</main>
+			<footer>
+				footer
+			</footer>
+			<div id="superfooter"></div>
+		</div>
+	</body>
+</html>
