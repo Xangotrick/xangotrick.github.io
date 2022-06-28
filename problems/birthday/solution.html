@@ -29,8 +29,8 @@
 						Questions:
 					</h2>
 						<ol type="a">
-							<li>Write a function that returns an array of student birthdays.</li>
-							<li>Improve on that function by adding a parameter that controls the size of the array.</li>
+							<li>Write a function that returns a list of student birthdays.</li>
+							<li>Improve on that function by adding a parameter that controls the size of the list.</li>
 							<pre>
 import random
 
@@ -40,7 +40,7 @@ def classroombuilder(numstudents):
 		returner.append(random.randint(1,365))
 	return returner
 							</pre>
-							<li>Write a function that takes an array of children birthdays as a parameter, and returns information on wether or not all birthdays are different</li>
+							<li>Write a function that takes an list of children birthdays as a parameter, and returns information on whether or not all birthdays are different</li>
 							<pre>
 def checkclass(array):
     for i in range(len(array)):

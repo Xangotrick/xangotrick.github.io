@@ -29,121 +29,58 @@
 					Questions:
 				</h2>
 				<ol type="a">
-					<li>Write as variables the parameters of the problem: <code>minint</code>, <code>maxint</code>, <code>inttoguess</code>.</li>
-					<li>Write a Jane method that take a parameter <code>inputint</code>, and returns information on whether <code>inputint</code> is higher, lower or equal to <code>inttoguess</code>.</li>
-					<pre>
-def Jane(inputint):
-    if inputint == inttoguess:
-        return 0
-    else:
-        if inputint > inttoguess:
-            return 1
-        else:
-            return -1
-					</pre>
-					<li>Write a method that emulates Bob's way of finding the right integer.</li>
-					<pre>
-def BobGuess():
-    max = maxint+1
-    min = minint
-    guess = int((max - min) / 2 + min)
-    found = False
-    while not found:
-        janeint = Jane(guess)
-        if janeint == 0:
-            found = True
-        else:
-            if janeint == 1:
-                max = guess
-                print(str(guess) + " is too high!")
-            else:
-                min = guess
-                print(str(guess) + " is too low!")
-            guess = int((max - min) / 2 + min)
-    print(str(guess) + " is good!")
-					</pre>
-					<li>Find the average amount of guesses needed to get the right answer through Bob's method.</li>
-					<pre>
-def BobGuess():
-    max = maxint+1
-    min = minint
-    guess = int((max - min) / 2 + min)
-    found = False
-    numofguesses = 0
-    while not found:
-        numofguesses += 1
-        janeint = Jane(guess)
-        if janeint == 0:
-            found = True
-        else:
-            if janeint == 1:
-                max = guess
-            else:
-                min = guess
-            guess = int((max - min) / 2 + min)
-    return numofguesses
+                    <li>Write a variable <code>magic</code> that represents an empty magic square.</li>
+                    <pre>
+magic = [[],[],[]]#magic[2][1] corresponds to row 2 column 1 with columns and rows going from 0 to 2
+                    </pre>
+                    <li>Fill <code>magic</code> using all numbers from 1 to 9. Then write a function <code>ismagic()</code> that returns True if <code>magic</code> is a magic square, or False if not.</li>
+                    <pre>
+def ismagic(amagic):
+    sumset=set()
+    sum = 0
 
-totalguessnumber = 0
-for i in range(1,101):
-    inttoguess = i
-    totalguessnumber += BobGuess()
+    #check column:
+    for i in range(3):
+        for j in range(3):
+            sum += amagic[j][i]
+        sumset.add(sum)
+        sum=0
+    #check rows
+    for i in range(3):
+        for j in range(3):
+            sum += amagic[i][j]
+        sumset.add(sum)
+        sum = 0
+    #check easy diag
+    for i in range(3):
+        sum += amagic[i][i]
+    sumset.add(sum)
+    sum = 0
+    #check hard diag
+    for i in range(3):
+        sum += amagic[i][2 - i]
+    sumset.add(sum)
+    sum = 0
+    return len(sumset) == 1
+                    </pre>
+                    <li>Find a way of systematically going through every possible way of filling <code>magic</code>.<i> (Hint: use <code>itertools.permutations()</code>)</i></li>
+                    <pre>
+def translatelisttomatrix(alist): # takes a list of 9 integers and places them in the magic square format filling row by row
+    returner = [[],[],[]]
+    for i in range(3):
+        for j in range(3):
+            returner[i].append(alist[i * 3 + j])
+    return returner
 
-print(totalguessnumber)
-print(totalguessnumber / 100) # 5.8 on average
-					</pre>
-					<li>Write a method that emulates randomly picking an integer until getting the right answer.</li>
-					<pre>
-def BobGuessRandom():
-    max = maxint
-    min = minint
-    guess = random.randint(min,max)
-    found = False
-    numofguesses = 0
-    while not found:
-        numofguesses += 1
-        janeint = Jane(guess)
-        if janeint == 0:
-            found = True
-        else:
-            if janeint == 1:
-                max = guess
-            else:
-                min = guess
-        guess = random.randint(min,max)
-    return numofguesses
-					</pre>
-					<li>Find the average amount of guesses needed to get the right answer through random guesses.</li>
-					<pre>
-def BobGuessRandom():
-    max = maxint
-    min = minint
-    guess = random.randint(min,max)
-    found = False
-    numofguesses = 0
-    while not found:
-        numofguesses += 1
-        janeint = Jane(guess)
-        if janeint == 0:
-            found = True
-        else:
-            if janeint == 1:
-                max = guess
-            else:
-                min = guess
-        guess = random.randint(min,max)
-    return numofguesses
 
-totalguessnumber = 0
-totaleventnum = 0
-for k in range(1000):
-    for i in range(1,101):
-        totaleventnum += 1
-        inttoguess = i
-        totalguessnumber += BobGuessRandom()
-
-print(totalguessnumber)
-print(totalguessnumber / totaleventnum) # 9.43 on average
-					</pre>
+count = 0
+for i in itertools.permutations([1,2,3,4,5,6,7,8,9]):
+    if(ismagic(translatelisttomatrix(i))):
+        count += 1
+print(count)
+                    </pre>
+                    <li>How many different 3x3 magic squares exist?</li>
+                    <pre>8</pre>
 				</ol>	
 				</div>
 				<i><a href="problem.html">Click on this link to go back to the problem</a></i>
