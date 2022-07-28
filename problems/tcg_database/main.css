@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 1100px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+div img{
+    width: 19%;
+}
+
